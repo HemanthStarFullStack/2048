@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+ 
+
+# print(auth_views.LoginView.as_view());
 
 from mygame.controllers import home_page
 from mygame.controllers import moveup
@@ -23,6 +26,9 @@ from mygame.controllers import moveup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # path('login/',),
+    # path('logout/'),
 
     path('', home_page.home_page,name = 'home_page'),
     
