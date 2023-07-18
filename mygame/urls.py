@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
- 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import views as auth_views
+
 
 # print(auth_views.LoginView.as_view());
 
@@ -29,6 +31,13 @@ urlpatterns = [
 
     # path('login/',),
     # path('logout/'),
+     path('accounts/signup/', auth_views.FormView.as_view(
+        template_name='registration/signup.html',
+        form_class=UserCreationForm,
+        success_url='/accounts/login/'
+    ), name='signup'),
+
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 
     path('', home_page.home_page,name = 'home_page'),
     
