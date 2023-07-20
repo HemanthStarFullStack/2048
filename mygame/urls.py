@@ -37,7 +37,7 @@ urlpatterns = [
         success_url='/accounts/login/'
     ), name='signup'),
 
-    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/login/', auth_views.LoginView.as_view( success_url=''), name='login'),
 
     path('', home_page.home_page,name = 'home_page'),
     
