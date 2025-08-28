@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h1>Welcome</h1>
-    <!-- Add the grid content specific to this page -->
-{% endblock %}
+{% load static %}
 
+{% block content %}
+    <h1>2048</h1>
+    <hr>
+    <h2>Score: <span id="score">{{ score }}</span></h2>
+    <div id="board"></div>
+
+    <script id="board-data" type="application/json">
+        {
+            "board": {{ board|safe }},
+            "score": {{ score }}
+        }
+    </script>
+{% endblock %}
