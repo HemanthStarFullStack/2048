@@ -1,17 +1,17 @@
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from mygame.models import UserProfile
-from mygame.controllers.game_logic import get_board, move_up, update_db_from_board, add_new_tile
+from mygame.controllers.game_logic import get_board, move_right, update_db_from_board, add_new_tile
 import json
 
 @login_required
-def moveup(request):
+def moveright(request):
     user_profile = UserProfile.objects.get(user=request.user)
     matrix = user_profile.matrix
 
     board, _ = get_board(matrix)
 
-    new_board, score_add = move_up(board)
+    new_board, score_add = move_right(board)
 
     if new_board != board:
         update_db_from_board(matrix, new_board)

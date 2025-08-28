@@ -1,0 +1,4 @@
+[2025-08-28 18:09:39 +0000] [13193] [INFO] Starting gunicorn 23.0.0
+[2025-08-28 18:09:39 +0000] [13193] [INFO] Listening at: http://0.0.0.0:8000 (13193)
+[2025-08-28 18:09:39 +0000] [13193] [INFO] Using worker: sync
+[2025-08-28 18:09:39 +0000] [13313] [INFO] Booting worker with pid: 13313
